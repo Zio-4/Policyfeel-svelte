@@ -1,14 +1,11 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-
-	let { data }: { data: PageData } = $props();
-    console.log(data);
-</script>
-
-<script lang="ts">
     import { onMount } from 'svelte';
     import { fly, fade } from 'svelte/transition';
-  
+    import type { PageData } from './$types';
+
+    // let { data }: { data: PageData } = $props();
+    // console.log(data);
+    
     let count = $state(0);
     let features = [
       "Vote on current bills and policies",
@@ -21,7 +18,7 @@
       const interval = setInterval(() => count++, 3000);
       return () => clearInterval(interval);
     });
-  </script>
+</script>
   
   <main class="bg-gradient-to-b from-purple-700 to-indigo-900 min-h-screen text-white">
     <nav class="container mx-auto p-6 flex justify-between items-center">

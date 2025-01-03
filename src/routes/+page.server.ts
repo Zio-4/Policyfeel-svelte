@@ -9,5 +9,6 @@ export const load: PageServerLoad = async () => {
         },
     });
     const bills = await response.json();
+    console.log(bills);
     return { bills };
 };
