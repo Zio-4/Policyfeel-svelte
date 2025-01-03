@@ -27,6 +27,10 @@
         </button>
       </div>
     </nav>
+
+    <div class="flex justify-center items-center">
+      <span class="text-center text-4xl font-bold mt-10 bg-orange-500  p-6 rounded-lg">Under Construction 👷🏼🚧</span>
+    </div>
   
     <header class="container mx-auto text-center py-20">
       <h1 class="text-5xl font-bold mb-6">
