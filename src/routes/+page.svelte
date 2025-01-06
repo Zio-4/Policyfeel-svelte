@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { fly, fade } from 'svelte/transition';
+    import { fly, fade, } from 'svelte/transition';
     import type { PageData } from './$types';
 
     // let { data }: { data: PageData } = $props();
@@ -21,16 +21,6 @@
 </script>
   
   <main class="bg-gradient-to-b from-purple-700 to-indigo-900 min-h-screen text-white">
-    <nav class="container mx-auto p-6 flex justify-between items-center">
-      <div class="text-2xl font-bold">PolicyFeeler</div>
-      <div class="space-x-4">
-        <a href="#features" class="hover:text-purple-300">Features</a>
-        <a href="#about" class="hover:text-purple-300">About</a>
-        <button class="bg-white text-purple-700 px-4 py-2 rounded-full hover:bg-purple-100 transition-colors">
-          Sign Up
-        </button>
-      </div>
-    </nav>
 
     <div class="flex justify-center items-center">
       <span class="text-center text-4xl font-bold mt-10 bg-orange-500  p-6 rounded-lg">Under Construction 👷🏼🚧</span>
