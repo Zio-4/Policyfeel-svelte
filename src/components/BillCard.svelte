@@ -6,15 +6,14 @@
   
     let { bill } = $props();
   
-    let totalVotes = $derived(bill.votes.yes + bill.votes.no + bill.votes.neutral);
-    let yesPercentage = $derived((bill.votes.yes / totalVotes) * 100);
-    let noPercentage = $derived((bill.votes.no / totalVotes) * 100); 
-    let neutralPercentage = $derived((bill.votes.neutral / totalVotes) * 100);
+    let totalVotes = $derived(Math.floor(Math.random() * 1000) + 100); // Random total between 100-1100
+    let yesPercentage = $derived(Math.floor(Math.random() * 40) + 30); // Random 30-70%
+    let noPercentage = $derived(Math.floor(Math.random() * 30) + 10); // Random 10-40%
+    let neutralPercentage = $derived(Math.floor(Math.random() * 30) + 10); // Random 10-40%
 </script>
-  
   <Card class="w-full">
     <CardHeader>
-      <CardTitle class="text-lg font-bold">{bill.name}</CardTitle>
+      <CardTitle class="text-lg font-bold">{bill.title}</CardTitle>
       <p class="text-sm text-muted-foreground">Introduced by {bill.introducedBy}</p>
     </CardHeader>
     <CardContent>

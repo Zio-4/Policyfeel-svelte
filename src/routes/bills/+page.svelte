@@ -4,57 +4,46 @@
     import BillCard from "../../components/BillCard.svelte";
     import { Search, Filter, SortAsc } from 'lucide-svelte';
   
+    let { data } = $props()
 
-    const mockBills: any[] = [
-      {
-        id: '1',
-        name: 'Clean Energy Act',
-        introducedBy: 'Sen. Jane Doe',
-        description: 'A bill to promote clean energy initiatives and reduce carbon emissions.',
-        votes: { yes: 1200, no: 800, neutral: 500 },
-        level: 'Federal',
-        category: 'Environment'
-      },
-      {
-        id: '2',
-        name: 'Education Reform Bill',
-        introducedBy: 'Rep. John Smith',
-        description: 'A comprehensive plan to improve public education and increase teacher salaries.',
-        votes: { yes: 1500, no: 500, neutral: 300 },
-        level: 'State',
-        category: 'Education'
-      },
-      {
-        id: '3',
-        name: 'Local Infrastructure Improvement',
-        introducedBy: 'Councilor Sarah Johnson',
-        description: 'A proposal to repair and upgrade local roads and bridges.',
-        votes: { yes: 800, no: 200, neutral: 100 },
-        level: 'Local',
-        category: 'Infrastructure'
-      },
-      // Add more mock bills as needed
-    ];
+
+    // const mockBills: any[] = [
+    //   {
+    //     id: '1',
+    //     name: 'Clean Energy Act',
+    //     introducedBy: 'Sen. Jane Doe',
+    //     description: 'A bill to promote clean energy initiatives and reduce carbon emissions.',
+    //     votes: { yes: 1200, no: 800, neutral: 500 },
+    //     level: 'Federal',
+    //     category: 'Environment'
+    //   },
+    //   {
+    //     id: '2',
+    //     name: 'Education Reform Bill',
+    //     introducedBy: 'Rep. John Smith',
+    //     description: 'A comprehensive plan to improve public education and increase teacher salaries.',
+    //     votes: { yes: 1500, no: 500, neutral: 300 },
+    //     level: 'State',
+    //     category: 'Education'
+    //   },
+    //   {
+    //     id: '3',
+    //     name: 'Local Infrastructure Improvement',
+    //     introducedBy: 'Councilor Sarah Johnson',
+    //     description: 'A proposal to repair and upgrade local roads and bridges.',
+    //     votes: { yes: 800, no: 200, neutral: 100 },
+    //     level: 'Local',
+    //     category: 'Infrastructure'
+    //   },
+    //   // Add more mock bills as needed
+    // ];
 
     
     let searchTerm = $state("");
     let filterLevel = $state("All");
     let sortBy = $state("name");
   
-    let filteredBills = $derived(mockBills
-      .filter((bill: any) =>
-        bill.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        bill.description.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      .filter((bill: any) => filterLevel === "All" || bill.level === filterLevel)
-      .sort((a: any, b: any) => {
-        if (sortBy === "name") {
-          return a.name.localeCompare(b.name);
-        } else if (sortBy === "votes") {
-          return (b.votes.yes + b.votes.no + b.votes.neutral) - (a.votes.yes + a.votes.no + a.votes.neutral);
-        }
-        return 0;
-      }));
+    let filteredBills = data.bills
   </script>
   
   <div class="container mx-auto px-4 py-8 bg-gray-100">
