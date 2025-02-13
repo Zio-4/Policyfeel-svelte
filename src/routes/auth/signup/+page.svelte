@@ -12,11 +12,6 @@
     confirmPassword: '',
   })
 
-  function handleSubmit(e: SubmitEvent) {
-    e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-  }
 </script>
 
 <div class="min-h-screen flex items-center justify-center bg-background">
@@ -31,22 +26,7 @@
         <CardDescription class="text-muted-foreground">Create your account to get started</CardDescription>
       </CardHeader>
       <CardContent class="bg-card">
-        <form on:submit={handleSubmit} class="space-y-4">
-          <div class="space-y-2">
-            <Label for="username" class="text-foreground">Username</Label>
-            <div class="relative">
-              <Input
-                id="username"
-                name="username"
-                type="text"
-                placeholder="johndoe"
-                bind:value={formData.username}
-                class="pl-10 bg-input text-foreground placeholder-muted-foreground"
-                required
-              />
-              <User class="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
-            </div>
-          </div>
+        <form method="POST" action="?/signup" class="space-y-4">
           <div class="space-y-2">
             <Label for="email" class="text-foreground">Email</Label>
             <div class="relative">
